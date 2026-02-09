@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Regalo Especial</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <style>
+        :root {
+            --rosa-pastel: #FFD1DC;
+            --azul-pastel: #AEC6CF;
+            --verde-pastel: #B2E2D2;
+            --crema: #FFF9F1;
+            --texto: #555;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--crema);
+            color: var(--texto);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h1 { color: #d4a5a5; font-size: 1.5rem; }
+
+        /* El Menú Interactivo */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            padding: 20px;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        .menu-item {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+
+        .menu-item:active { transform: scale(0.95); }
+
+        /* Colores de los botones */
+        .item-fotos { border-color: var(--rosa-pastel); }
+        .item-musica { border-color: var(--azul-pastel); }
+        .item-vales { border-color: var(--verde-pastel); }
+        .item-mensaje { border-color: #E6E6FA; }
+
+        .icon { font-size: 2rem; display: block; margin-bottom: 10px; }
+        
+        /* Modal para mostrar contenido */
+        #modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(255,255,255,0.95);
+            z-index: 100;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div style="font-size: 3rem;">✨</div>
+        <h1>Bienvenida a nuestra App</h1>
+    </header>
+
+    <div class="menu-grid">
+        <div class="menu-item item-fotos" onclick="abrir('fotos')">
+            <span class="icon">📸</span>
+            <span>Nuestras Fotos</span>
+        </div>
+        <div class="menu-item item-musica" onclick="abrir('musica')">
+            <span class="icon">🎵</span>
+            <span>Tu Playlist</span>
+        </div>
+        <div class="menu-item item-vales" onclick="abrir('vales')">
+            <span class="icon">🎟️</span>
+            <span>Vales de Amor</span>
+        </div>
+        <div class="menu-item item-mensaje" onclick="abrir('mensaje')">
+            <span class="icon">💌</span>
+            <span>Un Mensaje</span>
+        </div>
+    </div>
+
+    <div id="modal">
+        <div id="contenido"></div>
+        <button onclick="cerrar()" style="margin-top: 30px; padding: 10px 20px; border-radius: 20px; border: none; background: var(--rosa-pastel);">Volver</button>
+    </div>
+
+    <script>
+        function abrir(seccion) {
+            const modal = document.getElementById('modal');
+            const cont = document.getElementById('contenido');
+            modal.style.display = 'block';
+
+            if(seccion === 'fotos') {
+                cont.innerHTML = '<h2>Nuestras Fotos</h2><p>Aquí pondrás tus imágenes</p><img src="TU_FOTO_AQUI.jpg" style="width:100%; border-radius:15px;">';
+            }
+            if(seccion === 'mensaje') {
+                cont.innerHTML = '<h2>Para ti</h2><p>Aquí va el texto que quieras editar...</p>';
+            }
+            // Agregaremos más secciones según lo que necesites
+        }
+
+        function cerrar() {
+            document.getElementById('modal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
