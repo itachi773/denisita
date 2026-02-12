@@ -34,7 +34,6 @@
 
         h1 { color: #d4a5a5; font-size: 1.5rem; }
 
-        /* El Menú Interactivo */
         .menu-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -57,7 +56,6 @@
 
         .menu-item:active { transform: scale(0.95); }
 
-        /* Colores de los botones */
         .item-fotos { border-color: var(--rosa-pastel); }
         .item-musica { border-color: var(--azul-pastel); }
         .item-vales { border-color: var(--verde-pastel); }
@@ -65,7 +63,6 @@
 
         .icon { font-size: 2rem; display: block; margin-bottom: 10px; }
         
-        /* Modal para mostrar contenido */
         #modal {
             display: none;
             position: fixed;
@@ -102,6 +99,11 @@
             <span class="icon">💌</span>
             <span>Un Mensaje</span>
         </div>
+        
+        <div class="menu-item" style="border-color:#FFB6C1;" onclick="abrir('juego')">
+            <span class="icon">🎮</span>
+            <span>Juego Secreto</span>
+        </div>
     </div>
 
     <div id="modal">
@@ -116,17 +118,36 @@
             modal.style.display = 'block';
 
             if(seccion === 'fotos') {
-                cont.innerHTML = '<h2>Nuestras Fotos</h2><p>Aquí pondrás tus imágenes</p><img src="TU_FOTO_AQUI.jpg" style="width:100%; border-radius:15px;">';
+                cont.innerHTML = '<h2>Nuestras Fotos</h2><p>Aquí pondrás tus imágenes</p>';
             }
+
             if(seccion === 'mensaje') {
                 cont.innerHTML = '<h2>Para ti</h2><p>Aquí va el texto que quieras editar...</p>';
             }
-            // Agregaremos más secciones según lo que necesites
+
+            if(seccion === 'juego') {
+                cont.innerHTML = `
+                    <h2>🎮 Juego Secreto</h2>
+                    <p>
+                        
+                        <br><br>
+                        hola amorcito, hice este juego para ti y pensando en ti 
+                        quiero, se basa en cosas que tu y yo entendemos y referencias asi que elige bien
+                        debes ponerle atencion, asi que si estas ocupada o paso algo dejalo para otro momento vale?
+                    </p>
+
+                    <button onclick="alert('Aquí luego empieza el juego 😉')"
+                        style="margin-top:20px; padding:10px 20px; border-radius:20px; border:none; background:#FFD1DC;">
+                        Empezar
+                    </button>
+                `;
+            }
         }
 
         function cerrar() {
             document.getElementById('modal').style.display = 'none';
         }
     </script>
+
 </body>
 </html>
