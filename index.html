@@ -81,9 +81,250 @@ header {
         opacity: 0;
     }
 }
+
+/* ===== PANTALLA BIENVENIDA ===== */
+#pantallaInicio {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: var(--crema);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 30px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#pantallaInicio h2 {
+    font-size: 1.6rem;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+#pantallaInicio p {
+    color: #aaa;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+}
+
+#inputNombre {
+    padding: 14px 20px;
+    border-radius: 25px;
+    border: 2px solid var(--rosa);
+    font-size: 1rem;
+    text-align: center;
+    outline: none;
+    width: 240px;
+    background: white;
+    color: var(--texto);
+    margin-bottom: 15px;
+    display: block;
+}
+
+#btnEntrar {
+    padding: 12px 30px;
+    border-radius: 25px;
+    border: none;
+    background: var(--rosa);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#btnEntrar:active { transform: scale(0.95); }
+
+#errorNombre {
+    color: #e88;
+    font-size: 0.85rem;
+    margin-top: 8px;
+    min-height: 18px;
+}
+
+/* ===== CAJA DE COMENTARIOS ===== */
+#cajaComentarios {
+    width: 90%;
+    max-width: 400px;
+    margin: 20px auto 40px;
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+#cajaComentarios h3 {
+    color: #888;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+#textComentario {
+    width: 100%;
+    border: 2px solid var(--rosa);
+    border-radius: 15px;
+    padding: 12px;
+    font-size: 0.95rem;
+    font-family: 'Segoe UI', sans-serif;
+    resize: none;
+    outline: none;
+    box-sizing: border-box;
+    color: var(--texto);
+    background: #fff9f9;
+}
+
+#btnEnviarComentario {
+    margin-top: 12px;
+    padding: 10px 25px;
+    border-radius: 20px;
+    border: none;
+    background: var(--rosa);
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: transform 0.2s;
+}
+
+#btnEnviarComentario:active { transform: scale(0.95); }
+
+#msgComentario {
+    font-size: 0.85rem;
+    color: #aaa;
+    margin-top: 8px;
+    min-height: 18px;
+}
+
+/* ===== PANEL ADMIN ===== */
+#btnAdmin {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    background: rgba(200,200,200,0.3);
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 500;
+    opacity: 0.4;
+}
+
+#btnAdmin:hover { opacity: 1; }
+
+#modalAdmin {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 2000;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+#panelAdmin {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    max-width: 480px;
+    margin: 40px auto;
+}
+
+#panelAdmin h2 { color: #555; margin-bottom: 20px; }
+
+.admin-seccion {
+    background: #f9f9f9;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.admin-seccion h4 {
+    color: #888;
+    margin: 0 0 12px 0;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.visita-item, .comentario-item {
+    background: white;
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+    color: #666;
+    border-left: 3px solid var(--rosa);
+}
+
+.comentario-item {
+    border-left-color: var(--azul);
+}
+
+.comentario-nombre {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 3px;
+}
+
+.comentario-texto {
+    color: #777;
+    font-style: italic;
+}
+
+.comentario-fecha {
+    color: #bbb;
+    font-size: 0.75rem;
+    margin-top: 3px;
+}
+
+#inputAdminPass {
+    padding: 10px 15px;
+    border-radius: 15px;
+    border: 2px solid var(--rosa);
+    font-size: 0.95rem;
+    outline: none;
+    width: 200px;
+    text-align: center;
+}
+
+#btnCerrarAdmin {
+    display: block;
+    margin: 15px auto 0;
+    padding: 10px 25px;
+    border-radius: 20px;
+    border: none;
+    background: var(--azul);
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+#btnLimpiarVisitas {
+    padding: 7px 15px;
+    border-radius: 15px;
+    border: none;
+    background: #ffe0e0;
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin-top: 8px;
+}
 </style>
 </head>
 <body>
+
+<!-- ===== PANTALLA DE BIENVENIDA CON NOMBRE ===== -->
+<div id="pantallaInicio">
+    <div style="font-size:3rem;margin-bottom:10px;">🌸</div>
+    <h2>Hola, ¿quién eres?</h2>
+    <p>Escribe tu nombre para entrar</p>
+    <input type="text" id="inputNombre" placeholder="Tu nombre..." maxlength="30">
+    <button id="btnEntrar" onclick="entrarConNombre()">Entrar ✨</button>
+    <div id="errorNombre"></div>
+</div>
 
 <header>
 <div style="font-size:3rem;">✨</div>
@@ -97,11 +338,235 @@ header {
 </div>
 </div>
 
+<!-- ===== CAJA DE COMENTARIOS ===== -->
+<div id="cajaComentarios">
+    <h3>💬 Deja un mensajito</h3>
+    <textarea id="textComentario" rows="3" placeholder="Escribe algo bonito..."></textarea>
+    <button id="btnEnviarComentario" onclick="enviarComentario()">Enviar 💌</button>
+    <div id="msgComentario"></div>
+</div>
+
 <div id="modal">
 <div id="contenido"></div>
 </div>
 
-<script>
+<!-- ===== BOTÓN ADMIN DISCRETO ===== -->
+<button id="btnAdmin" onclick="abrirAdmin()">🔑</button>
+
+<!-- ===== MODAL ADMIN ===== -->
+<div id="modalAdmin">
+    <div id="panelAdmin">
+        <h2>🔐 Panel Secreto</h2>
+        <div id="adminLogin">
+            <p style="color:#888;font-size:0.9rem;">Contraseña:</p>
+            <input type="password" id="inputAdminPass" placeholder="••••••">
+            <br><br>
+            <button onclick="verificarAdmin()" style="padding:10px 25px;border-radius:20px;border:none;background:var(--rosa);cursor:pointer;">
+                Entrar
+            </button>
+            <p id="msgAdminError" style="color:#e88;font-size:0.85rem;margin-top:10px;"></p>
+        </div>
+        <div id="adminContenido" style="display:none;">
+
+            <div class="admin-seccion">
+                <h4>👁️ Visitas</h4>
+                <div id="listaVisitas"></div>
+                <button id="btnLimpiarVisitas" onclick="limpiarVisitas()">🗑️ Limpiar visitas</button>
+            </div>
+
+            <div class="admin-seccion">
+                <h4>💬 Comentarios</h4>
+                <div id="listaComentarios"></div>
+            </div>
+
+        </div>
+        <button id="btnCerrarAdmin" onclick="cerrarAdmin()">Cerrar</button>
+    </div>
+</div>
+
+<script type="module">
+
+// ============================================================
+// FIREBASE CONFIG
+// ============================================================
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getDatabase, ref, push, get, remove } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyClayLbt3QZ3qq2SPShrTLn5cCKDWzrWEc",
+    authDomain: "docsebas-b4ec5.firebaseapp.com",
+    databaseURL: "https://docsebas-b4ec5-default-rtdb.firebaseio.com",
+    projectId: "docsebas-b4ec5",
+    storageBucket: "docsebas-b4ec5.firebasestorage.app",
+    messagingSenderId: "310475358798",
+    appId: "1:310475358798:web:f5366adbd17ed6518e791f"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+// ============================================================
+// NOMBRE + REGISTRO DE VISITA
+// ============================================================
+
+let nombreUsuario = "";
+
+function entrarConNombre(){
+    const input = document.getElementById("inputNombre");
+    const nombre = input.value.trim();
+
+    if(!nombre){
+        document.getElementById("errorNombre").textContent = "Ponle tu nombre para entrar 💕";
+        return;
+    }
+
+    nombreUsuario = nombre;
+    registrarVisita(nombre);
+
+    const pantalla = document.getElementById("pantallaInicio");
+    pantalla.style.transition = "opacity 0.5s";
+    pantalla.style.opacity = "0";
+    setTimeout(() => { pantalla.style.display = "none"; }, 500);
+}
+
+document.getElementById("inputNombre").addEventListener("keydown", function(e){
+    if(e.key === "Enter") entrarConNombre();
+});
+
+function registrarVisita(nombre){
+    const ahora = new Date();
+    const fecha = ahora.toLocaleString("es-CO", {
+        day: "2-digit", month: "2-digit", year: "numeric",
+        hour: "2-digit", minute: "2-digit"
+    });
+
+    fetch("https://ipapi.co/json/")
+        .then(r => r.json())
+        .then(data => {
+            const lugar = data.city && data.country_name
+                ? `${data.city}, ${data.country_name}`
+                : "Lugar desconocido";
+            push(ref(db, "visitas"), { nombre, fecha, lugar });
+        })
+        .catch(() => {
+            push(ref(db, "visitas"), { nombre, fecha, lugar: "Lugar no disponible" });
+        });
+}
+
+// ============================================================
+// COMENTARIOS
+// ============================================================
+
+function enviarComentario(){
+    const texto = document.getElementById("textComentario").value.trim();
+    const msg = document.getElementById("msgComentario");
+
+    if(!texto){
+        msg.textContent = "Escribe algo primero 💭";
+        return;
+    }
+    if(!nombreUsuario){
+        msg.textContent = "Necesitas entrar primero con tu nombre";
+        return;
+    }
+
+    const ahora = new Date();
+    const fecha = ahora.toLocaleString("es-CO", {
+        day: "2-digit", month: "2-digit", year: "numeric",
+        hour: "2-digit", minute: "2-digit"
+    });
+
+    push(ref(db, "comentarios"), { nombre: nombreUsuario, texto, fecha })
+        .then(() => {
+            document.getElementById("textComentario").value = "";
+            msg.textContent = "¡Mensajito guardado! 💌";
+            setTimeout(() => { msg.textContent = ""; }, 3000);
+        })
+        .catch(() => {
+            msg.textContent = "Error al guardar, intenta de nuevo 😔";
+        });
+}
+
+// ============================================================
+// PANEL ADMIN
+// ============================================================
+
+const ADMIN_PASSWORD = "docsebas2025";
+
+function abrirAdmin(){
+    document.getElementById("modalAdmin").style.display = "block";
+    document.getElementById("adminLogin").style.display = "block";
+    document.getElementById("adminContenido").style.display = "none";
+    document.getElementById("inputAdminPass").value = "";
+    document.getElementById("msgAdminError").textContent = "";
+}
+
+function cerrarAdmin(){
+    document.getElementById("modalAdmin").style.display = "none";
+}
+
+function verificarAdmin(){
+    const pass = document.getElementById("inputAdminPass").value;
+    if(pass === ADMIN_PASSWORD){
+        document.getElementById("adminLogin").style.display = "none";
+        document.getElementById("adminContenido").style.display = "block";
+        cargarDatosAdmin();
+    } else {
+        document.getElementById("msgAdminError").textContent = "Contraseña incorrecta 👀";
+    }
+}
+
+function cargarDatosAdmin(){
+    const listaV = document.getElementById("listaVisitas");
+    const listaC = document.getElementById("listaComentarios");
+
+    listaV.innerHTML = `<div style="color:#bbb;font-size:0.85rem;">Cargando...</div>`;
+    listaC.innerHTML = `<div style="color:#bbb;font-size:0.85rem;">Cargando...</div>`;
+
+    // Visitas
+    get(ref(db, "visitas")).then(snapshot => {
+        if(!snapshot.exists()){
+            listaV.innerHTML = `<div style="color:#bbb;font-size:0.85rem;">Nadie ha entrado todavía</div>`;
+        } else {
+            const items = [];
+            snapshot.forEach(child => items.push(child.val()));
+            listaV.innerHTML = items.reverse().map(v => `
+                <div class="visita-item">
+                    <strong>${v.nombre}</strong> — ${v.fecha}<br>
+                    <span style="color:#bbb;">📍 ${v.lugar}</span>
+                </div>
+            `).join("");
+        }
+    });
+
+    // Comentarios
+    get(ref(db, "comentarios")).then(snapshot => {
+        if(!snapshot.exists()){
+            listaC.innerHTML = `<div style="color:#bbb;font-size:0.85rem;">Aún no hay comentarios</div>`;
+        } else {
+            const items = [];
+            snapshot.forEach(child => items.push(child.val()));
+            listaC.innerHTML = items.reverse().map(c => `
+                <div class="comentario-item">
+                    <div class="comentario-nombre">${c.nombre}</div>
+                    <div class="comentario-texto">"${c.texto}"</div>
+                    <div class="comentario-fecha">${c.fecha}</div>
+                </div>
+            `).join("");
+        }
+    });
+}
+
+function limpiarVisitas(){
+    if(confirm("¿Borrar todas las visitas?")){
+        remove(ref(db, "visitas")).then(() => cargarDatosAdmin());
+    }
+}
+
+// ============================================================
+// TODO LO QUE YA TENÍAS (SIN CAMBIOS)
+// ============================================================
 
 let historial = [];
 
@@ -856,17 +1321,10 @@ function mostrarQuestMusical() {
     <br><br>
     
 
-
-
-
-
     <button onclick="volverInicio()" 
     style="background:#FFD1DC;padding:8px 15px;border:none;border-radius:15px;margin-left:10px;">
     🏠 Inicio
     </button>
-
-    
-
 
     <button onclick="verificarRespuestas()" 
     style="background:#FFD1DC;padding:12px 25px;border-radius:20px;border:none;">
@@ -1165,7 +1623,46 @@ style="background:#FFD1DC;padding:10px 20px;border:none;border-radius:20px;displ
 `;
 }
 
- 
+// Exponer funciones al window para que los onclick del HTML funcionen
+window.entrarConNombre = entrarConNombre;
+window.enviarComentario = enviarComentario;
+window.abrirAdmin = abrirAdmin;
+window.cerrarAdmin = cerrarAdmin;
+window.verificarAdmin = verificarAdmin;
+window.limpiarVisitas = limpiarVisitas;
+window.abrirJuego = abrirJuego;
+window.mostrarPregunta1 = mostrarPregunta1;
+window.respuesta1 = respuesta1;
+window.mostrarExplicacion1 = mostrarExplicacion1;
+window.mostrarPregunta2 = mostrarPregunta2;
+window.respuesta2 = respuesta2;
+window.mostrarExplicacion2 = mostrarExplicacion2;
+window.mostrarPregunta3 = mostrarPregunta3;
+window.respuesta3 = respuesta3;
+window.mostrarExplicacion3 = mostrarExplicacion3;
+window.mostrarPregunta4 = mostrarPregunta4;
+window.mover = mover;
+window.mostrarFinalLaberinto = mostrarFinalLaberinto;
+window.mostrarPreguntaImagen1 = mostrarPreguntaImagen1;
+window.incorrectaImg1 = incorrectaImg1;
+window.correctaImg1 = correctaImg1;
+window.mostrarPreguntaImagen2 = mostrarPreguntaImagen2;
+window.incorrectaImg2 = incorrectaImg2;
+window.correctaImg2 = correctaImg2;
+window.mostrarQuestMusical = mostrarQuestMusical;
+window.toggleAudio = toggleAudio;
+window.seleccionarRespuesta = seleccionarRespuesta;
+window.verificarRespuestas = verificarRespuestas;
+window.mostrarPenultima = mostrarPenultima;
+window.respuestaPenultima = respuestaPenultima;
+window.mostrarExplicacionPenultima = mostrarExplicacionPenultima;
+window.mostrarCajaFuerte = mostrarCajaFuerte;
+window.verificarCodigo = verificarCodigo;
+window.mostrarCartaFinal = mostrarCartaFinal;
+window.volverAtras = volverAtras;
+window.volverInicio = volverInicio;
+window.guardar = guardar;
+
 </script>
 </body>
 </html>
